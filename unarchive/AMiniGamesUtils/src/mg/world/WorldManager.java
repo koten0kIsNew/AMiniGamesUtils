@@ -309,4 +309,12 @@ public class WorldManager implements Listener{
 			event.setCancelled(true);
 		}
 	}
+	
+	@SuppressWarnings("deprecation")
+	@EventHandler
+	public void onChatting(org.bukkit.event.player.PlayerChatEvent event) {
+		if (cancelledEvents.get(event.getEventName()).contains(event.getPlayer().getWorld())) {
+			event.setCancelled(true);
+		}
+	}
 }
